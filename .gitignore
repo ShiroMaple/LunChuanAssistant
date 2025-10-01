@@ -1,3 +1,31 @@
+# 测试
+测试/
+
+# 开发
+/MFAAvalonia/*
+!/MFAAvalonia/.gitkeep
+/MFATools/*
+!/MFATools/.gitkeep
+/.nicegui/
+
+# 日志
+/recording/
+/vision/
+/screenshot/
+/assets/resource/**/ocr/
+
+# 小工具
+/launcher/*
+!/launcher/MNMA.py
+/feedbacker/*
+!/feedbacker/反馈打包小工具.py
+!/feedbacker/feedbacker.png
+!/feedbacker/feedbacker.ico
+/gc/*
+!/gc/安全清理小工具.py
+!/gc/gc.png
+!/gc/gc.ico
+
 # docs
 docs/node_modules
 docs/.vuepress/.temp
@@ -440,7 +468,8 @@ enc_temp_folder/*
 .nuke/temp/*
 
 # Build
-deps
+deps/*
+!deps/.gitkeep
 build
 install
 

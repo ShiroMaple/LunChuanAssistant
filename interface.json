@@ -1,8 +1,8 @@
 {
     "name": "LunChuanAssistant",
     "url": "https://github.com/ShiroMaple/LunChuanAssistant",
-    "custom_title": "仑传助手(ShiroMaple/LunChuanAssistant) v0.1",
-    "version": "v0.1",
+    "custom_title": "仑传助手(ShiroMaple/LunChuanAssistant) v0.2",
+    "version": "v0.2",
     "controller": [
         {
             "name": "安卓端",
@@ -13,7 +13,7 @@
         {
             "name": "官服",
             "path": [
-                "{PROJECT_DIR}/resource"
+                "{PROJECT_DIR}/assets/resource"
             ]
         }
     ],
