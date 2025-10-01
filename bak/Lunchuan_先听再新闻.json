@@ -1,0 +1,531 @@
+{
+    "entry_仑传": {
+        "next": [
+            //"flag_MainPage",
+            "enter_closePopWindow",
+            "enter_MyPage"
+        ],
+        "interrupt": [
+            "startLunchuan"
+        ]
+    },
+    "enter_closePopWindow": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/buttonClose.png"
+                ],
+                "roi": [
+                    297,
+                    768,
+                    123,
+                    125
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "enter_MyPage"
+        ]
+    },
+    "enter_MyPage": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "我的"
+                ],
+                "roi": [
+                    519,
+                    1077,
+                    201,
+                    203
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "enter_closePopWindow",
+            "confirm_互动中心"
+        ],
+        "interrupt": [
+            "enter_互动中心"
+        ]
+    },
+    "enter_互动中心": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "互动中心"
+                ],
+                "roi": [
+                    22,
+                    340,
+                    349,
+                    138
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "confirm_互动中心": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "每日互动"
+                ]
+            }
+        },
+        "next": [
+            "enter_radio"
+        ],
+        "interrupt": [
+            "互动中心_SwipeUp"
+        ]
+    },
+    "互动中心_SwipeUp": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    365,
+                    1187,
+                    1,
+                    1
+                ],
+                "end": [
+                    367,
+                    203,
+                    1,
+                    1
+                ],
+                "duration": 1500
+            }
+        }
+    },
+    "enter_radio": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "听广播"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "flag_radio"
+        ],
+        "interrupt": [
+            "click_去完成"
+        ]
+    },
+    "flag_radio": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "FM100"
+                ]
+            }
+        },
+        "next": [
+            "enter_News"
+        ],
+        "interrupt": [
+            "click_Back"
+        ]
+    },
+    "click_去完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "去完成"
+                ],
+                "roi": "enter_radio",
+                "roi_offset": [
+                    400,
+                    0,
+                    100,
+                    100
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "enter_News": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "新闻资讯阅读"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "click_去阅读"
+        ]
+    },
+    "click_去阅读": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "去阅读"
+                ],
+                "roi": "enter_News",
+                "roi_offset": [
+                    400,
+                    0,
+                    100,
+                    100
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "flag_MainPage"
+        ]
+    },
+    "flag_MainPage": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/iconMainPage.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    119,
+                    1123,
+                    1,
+                    1
+                ],
+                "end": [
+                    124,
+                    923,
+                    1,
+                    1
+                ],
+                "duration": 600
+            }
+        },
+        "post_delay": 1200,
+        "next": [
+            "locate_眼睛图标"
+        ],
+        "interrupt": [
+            "首页_SwipeUp"
+        ]
+    },
+    "首页_SwipeUp": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    119,
+                    1123,
+                    1,
+                    1
+                ],
+                "end": [
+                    124,
+                    923,
+                    1,
+                    1
+                ],
+                "duration": 600
+            }
+        },
+        "post_delay": 1200
+    },
+    "locate_眼睛图标": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/iconEye.png"
+                ],
+                "roi": [
+                    8,
+                    1008,
+                    112,
+                    175
+                ]
+            }
+        },
+        "action": "Click",
+        "target_offset": [
+            30,
+            0,
+            0,
+            0
+        ],
+        "next": [
+            "flag_视频新闻页",
+            "flag_视频直播页",
+            "flag_文字新闻页"
+        ]
+    },
+    "flag_视频新闻页": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "分享"
+                ],
+                "roi": [
+                    569,
+                    806,
+                    151,
+                    150
+                ]
+            }
+        },
+        "next": [
+            "flag_MainPage"
+        ],
+        "interrupt": [
+            "click_Back"
+        ]
+    },
+    "flag_视频直播页": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/buttonClose2.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "flag_MainPage"
+        ],
+        "on_error": [
+            "click_Back_Directly"
+        ]
+    },
+    "flag_文字新闻页": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/buttonComment.png"
+                ],
+                "roi": [
+                    372,
+                    1151,
+                    160,
+                    129
+                ]
+            }
+        },
+        "next": [
+            "新闻页_已点赞",
+            "新闻页_点击评论编辑框"
+        ]
+    },
+    "新闻页_已点赞": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/buttonLiked.png"
+                ],
+                "green_mask": true,
+                "roi": [
+                    484,
+                    1152,
+                    154,
+                    128
+                ]
+            }
+        },
+        "next": [
+            "flag_MainPage"
+        ],
+        "interrupt": [
+            "click_Back"
+        ]
+    },
+    "新闻页_点击评论编辑框": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "有爱评论"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "新闻页_输入评论文本"
+        ]
+    },
+    "新闻页_输入评论文本": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "发送"
+                ],
+                "roi": [
+                    513,
+                    1121,
+                    207,
+                    159
+                ]
+            }
+        },
+        "action": "InputText",
+        "input_text": "好！",
+        "post_delay": 1000,
+        "next": [
+            "click_发送"
+        ]
+    },
+    "click_发送": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "发送"
+                ],
+                "roi": [
+                    513,
+                    1121,
+                    207,
+                    159
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "新闻页_点赞"
+        ],
+        "interrupt": [
+            "click_发送"
+        ]
+    },
+    "新闻页_点赞": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/buttonLike.png"
+                ],
+                "green_mask": true,
+                "roi": [
+                    484,
+                    1152,
+                    154,
+                    128
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "新闻页_分享"
+        ]
+    },
+    "新闻页_分享": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/buttonShare.png"
+                ],
+                "roi": [
+                    592,
+                    19,
+                    128,
+                    141
+                ]
+            }
+        },
+        "action": "Click",
+        "next": [
+            "click_CopyLink"
+        ]
+    },
+    "click_CopyLink": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "复制链接"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 23000,
+        "next": [
+            "newsCounter_Add"
+        ]
+    },
+    "newsCounter_Add": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "news_counter"
+            }
+        },
+        "next": [
+            "flag_MainPage"
+        ],
+        "interrupt": [
+            "click_Back"
+        ]
+    },
+    "click_Back": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/buttonBack1.png",
+                    "Lunchuan/buttonBack2.png"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "click_Back_Directly": {
+        "action": "Click",
+        "target": [
+            26,
+            74,
+            22,
+            34
+        ]
+    },
+    "startLunchuan": {
+        "action": "StartApp",
+        "package": "com.zjonline.lunchuan"
+    },
+    "stopLunchuan": {
+        "action": "StopApp",
+        "package": "com.zjonline.lunchuan"
+    }
+}
