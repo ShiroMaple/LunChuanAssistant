@@ -1,8 +1,8 @@
 {
     "name": "LunChuanAssistant",
     "url": "https://github.com/ShiroMaple/LunChuanAssistant",
-    "custom_title": "仑传助手(ShiroMaple/LunChuanAssistant) v0.2",
-    "version": "v0.2",
+    "custom_title": "仑传助手(ShiroMaple/LunChuanAssistant) v0.9.0",
+    "version": "v0.9.0",
     "controller": [
         {
             "name": "安卓端",
