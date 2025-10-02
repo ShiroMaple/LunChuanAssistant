@@ -1,7 +1,18 @@
 {
-    "entry_仑传": {
+    "entry_新闻资讯": {
         "next": [
-            "enter_closePopWindow",
+            "init_News"
+        ]
+    },
+    "init_News": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "init_counter",
+                "custom_action_param": "5"
+            }
+        },
+        "next": [
             "flag_MainPage"
         ],
         "interrupt": [
@@ -20,174 +31,6 @@
                     768,
                     123,
                     125
-                ]
-            }
-        },
-        "action": "Click",
-        "next": [
-            "flag_MainPage"
-        ]
-    },
-    "enter_MyPage": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "我的"
-                ],
-                "roi": [
-                    519,
-                    1077,
-                    201,
-                    203
-                ]
-            }
-        },
-        "action": "Click",
-        "next": [
-            "enter_closePopWindow",
-            "confirm_互动中心"
-        ],
-        "interrupt": [
-            "enter_互动中心"
-        ]
-    },
-    "enter_互动中心": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "互动中心"
-                ],
-                "roi": [
-                    22,
-                    340,
-                    349,
-                    138
-                ]
-            }
-        },
-        "action": "Click"
-    },
-    "confirm_互动中心": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "每日互动"
-                ]
-            }
-        },
-        "post_delay": 2000,
-        "next": [
-            "enter_radio"
-        ],
-        "interrupt": [
-            "互动中心_SwipeUp"
-        ]
-    },
-    "互动中心_SwipeUp": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    365,
-                    1187,
-                    1,
-                    1
-                ],
-                "end": [
-                    367,
-                    203,
-                    1,
-                    1
-                ],
-                "duration": 1500
-            }
-        }
-    },
-    "enter_radio": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "听广播"
-                ],
-                "roi": [
-                    0,
-                    0,
-                    0,
-                    0
-                ]
-            }
-        },
-        "next": [
-            "flag_radio"
-        ],
-        "interrupt": [
-            "click_去完成"
-        ]
-    },
-    "click_去完成": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "去完成"
-                ],
-                "roi": "enter_radio",
-                "roi_offset": [
-                    400,
-                    0,
-                    100,
-                    100
-                ]
-            }
-        },
-        "action": "Click"
-    },
-    "flag_radio": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "FM100"
-                ]
-            }
-        }
-    },
-    "enter_News": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "新闻资讯阅读"
-                ],
-                "roi": [
-                    0,
-                    0,
-                    0,
-                    0
-                ]
-            }
-        },
-        "next": [
-            "click_去阅读"
-        ]
-    },
-    "click_去阅读": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "去阅读"
-                ],
-                "roi": "enter_News",
-                "roi_offset": [
-                    400,
-                    0,
-                    100,
-                    100
                 ]
             }
         },
@@ -225,6 +68,7 @@
         },
         "post_delay": 1200,
         "next": [
+            "enter_closePopWindow",
             "locate_眼睛图标"
         ],
         "interrupt": [
@@ -261,9 +105,9 @@
                 ],
                 "roi": [
                     8,
-                    1008,
+                    950,
                     112,
-                    175
+                    225
                 ]
             }
         },
@@ -503,7 +347,8 @@
                 ]
             }
         },
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 1500
     },
     "click_Back_Directly": {
         "action": "Click",
@@ -513,6 +358,9 @@
             22,
             34
         ]
+    },
+    "新闻资讯_stop": {
+        "next": "click_Back_Directly"
     },
     "startLunchuan": {
         "action": "StartApp",

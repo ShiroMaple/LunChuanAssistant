@@ -42,7 +42,7 @@ def install_resource():
 
     shutil.copytree(
         working_dir / "assets" / "resource",
-        install_path / "resource",
+        install_path / "assets" / "resource",
         dirs_exist_ok=True,
     )
     shutil.copy2(

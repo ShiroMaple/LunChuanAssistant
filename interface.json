@@ -1,0 +1,83 @@
+{
+    "name": "LunChuanAssistant",
+    "url": "https://github.com/ShiroMaple/LunChuanAssistant",
+    "custom_title": "仑传助手(ShiroMaple/LunChuanAssistant) v0.9.2",
+    "version": "v0.9.2",
+    "controller": [
+        {
+            "name": "安卓端",
+            "type": "Adb"
+        }
+    ],
+    "resource": [
+        {
+            "name": "默认",
+            "path": [
+                "{PROJECT_DIR}/assets/resource"
+            ]
+        }
+    ],
+    "agent": {
+        "child_exec": "{PROJECT_DIR}/python/python.exe",
+        "child_args": [
+            "-u",
+            "{PROJECT_DIR}/agent/main.py"
+        ]
+    },
+    "task": [
+        {
+            "name": "新闻资讯",
+            "entry": "entry_新闻资讯",
+            "option": [
+                "新闻资讯任务完成次数"
+            ]
+        },
+        {
+            "name": "互动中心",
+            "entry": "entry_互动中心"
+        }
+    ],
+    "option": {
+        "新闻资讯任务完成次数": {
+            "doc": "新闻资讯任务完成次数",
+            "cases": [
+                {
+                    "name": "5",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "4",
+                    "pipeline_override": {
+                        "init_News": {
+                            "custom_action_param": "4"
+                        }
+                    }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "init_News": {
+                            "custom_action_param": "3"
+                        }
+                    }
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "init_News": {
+                            "custom_action_param": "2"
+                        }
+                    }
+                },
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "init_News": {
+                            "custom_action_param": "1"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
