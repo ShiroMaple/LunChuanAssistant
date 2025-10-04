@@ -1,0 +1,50 @@
+{
+    "entry_启动仑传": {
+        "next": [
+            "confirm_仑传App"
+        ],
+        "interrupt": [
+            "startLunchuan"
+        ]
+    },
+    "confirm_仑传App": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/iconApp.png"
+                ]
+            }
+        }
+    },
+    "enter_closePopWindow": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "Lunchuan/buttonClose.png"
+                ],
+                "roi": [
+                    297,
+                    768,
+                    123,
+                    125
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "startLunchuan": {
+        "action": "StartApp",
+        "package": "com.zjonline.lunchuan",
+        "post_delay": 5000,
+        "rate_limit": 2000,
+        "next": [
+            "enter_closePopWindow"
+        ]
+    },
+    "stopLunchuan": {
+        "action": "StopApp",
+        "package": "com.zjonline.lunchuan"
+    }
+}

@@ -1,8 +1,8 @@
 {
     "name": "LunChuanAssistant",
     "url": "https://github.com/ShiroMaple/LunChuanAssistant",
-    "custom_title": "仑传助手(ShiroMaple/LunChuanAssistant) v0.9.2",
-    "version": "v0.9.2",
+    "custom_title": "仑传助手(ShiroMaple/LunChuanAssistant) v0.9.3",
+    "version": "v0.9.3",
     "controller": [
         {
             "name": "安卓端",
@@ -25,6 +25,10 @@
         ]
     },
     "task": [
+        {
+            "name": "启动仑传",
+            "entry": "entry_启动仑传"
+        },
         {
             "name": "新闻资讯",
             "entry": "entry_新闻资讯",

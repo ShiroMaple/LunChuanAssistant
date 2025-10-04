@@ -3,10 +3,6 @@
         "next": [
             "enter_MyPage",
             "confirm_互动中心"
-        ],
-        "interrupt": [
-            //"click_Back_Directly",
-            "startLunchuan"
         ]
     },
     "enter_MyPage": {
@@ -26,7 +22,6 @@
         },
         "action": "Click",
         "next": [
-            "enter_closePopWindow",
             "confirm_互动中心"
         ],
         "interrupt": [
@@ -48,7 +43,8 @@
                 ]
             }
         },
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 1000
     },
     "confirm_互动中心": {
         "recognition": {
@@ -59,8 +55,9 @@
                 ]
             }
         },
-        "post_delay": 2000,
+        "post_delay": 1000,
         "next": [
+            "互动中心_已签到",
             "互动中心_每日签到"
         ]
     },
@@ -69,15 +66,15 @@
             "type": "OCR",
             "param": {
                 "expected": [
-                    "签到领积分",
-                    "已签到"
+                    "签到领积分"
                 ]
             }
         },
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "互动中心_签到确定",
-            "互动中心_听广播"
+            "互动中心_每日签到"
         ]
     },
     "互动中心_签到确定": {
@@ -90,6 +87,21 @@
             }
         },
         "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "互动中心_已签到",
+            "互动中心_签到确定"
+        ]
+    },
+    "互动中心_已签到": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "已签到"
+                ]
+            }
+        },
         "next": [
             "互动中心_听广播"
         ]

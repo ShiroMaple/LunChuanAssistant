@@ -14,29 +14,6 @@
         },
         "next": [
             "flag_MainPage"
-        ],
-        "interrupt": [
-            "startLunchuan"
-        ]
-    },
-    "enter_closePopWindow": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "Lunchuan/buttonClose.png"
-                ],
-                "roi": [
-                    297,
-                    768,
-                    123,
-                    125
-                ]
-            }
-        },
-        "action": "Click",
-        "next": [
-            "flag_MainPage"
         ]
     },
     "flag_MainPage": {
@@ -68,7 +45,6 @@
         },
         "post_delay": 1200,
         "next": [
-            "enter_closePopWindow",
             "locate_眼睛图标"
         ],
         "interrupt": [
@@ -152,7 +128,8 @@
             "param": {
                 "template": [
                     "Lunchuan/buttonClose2.png"
-                ]
+                ],
+                "green_mask": true
             }
         },
         "action": "Click",
@@ -361,13 +338,5 @@
     },
     "新闻资讯_stop": {
         "next": "click_Back_Directly"
-    },
-    "startLunchuan": {
-        "action": "StartApp",
-        "package": "com.zjonline.lunchuan"
-    },
-    "stopLunchuan": {
-        "action": "StopApp",
-        "package": "com.zjonline.lunchuan"
     }
 }
